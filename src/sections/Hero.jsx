@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Element, Link as LinkScroll } from "react-scroll";
 import Button from "../components/Button.jsx";
+import { db } from "../../firebaseconfig.js"; // Import the Firestore instance
+import { collection, doc, setDoc } from "firebase/firestore"; // Import Firestore functions
+import { v4 as uuidv4 } from 'uuid'; // Import UUID for unique ID generation
 
 const Modal = ({ onClose, onSubmit }) => {
   const [name, setName] = useState("");
@@ -63,32 +66,24 @@ const Hero = () => {
   const [showModal, setShowModal] = useState(false);
   const [videoAllowed, setVideoAllowed] = useState(false);
 
-  // Function to save data to Google Sheets via a POST request
-  const saveToGoogleSheet = async (name, email) => {
-    console.log("Saving data to Google Sheets with values:", { name, email });
+  // Function to save data to Firestore
+  const saveToFirestore = async (name, email) => {
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyiJCnmO_ILrjiQlg1c2gRMx4ts8sBykoY-HTpH-w8KurY0xE6NGvE8X-JPQgh_s9NE/exec', {
-        method: 'POST',
-        body: JSON.stringify({ name, email }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const id = uuidv4(); // Generate a unique ID
+      await setDoc(doc(collection(db, "users"), id), {
+        name: name,
+        email: email,
       });
-      const result = await response.json();
-      if (result.result === "success") {
-        console.log("Data successfully saved to Google Sheets");
-      } else {
-        console.error("Error saving data:", result.message);
-      }
-    } catch (error) {
-      console.error("Error in saving data:", error);
+      console.log("Document written with ID: ", id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
     }
   };
 
   // Function to handle form submission
   const handleFormSubmit = (name, email) => {
     console.log("Handling form submission");
-    saveToGoogleSheet(name, email); // Save data to Google Sheets
+    saveToFirestore(name, email); // Save data to Firestore
     setShowModal(false); // Close modal
     setVideoAllowed(true); // Allow video playback
     console.log("Modal closed, video allowed:", videoAllowed);
