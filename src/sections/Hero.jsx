@@ -106,13 +106,13 @@ const Hero = () => {
             {/* Text Section */}
             <div className="max-w-512 max-lg:max-w-388">
               <div className="caption small-2 uppercase text-p3">
-                Constantly Stressed by Your Business? I Was Too—Until I Found This
+              Started Your Digital business, 
               </div>
               <h1 className="mb-6 h4 text-p4 uppercase max-lg:mb-7 max-lg:h2 max-md:mb-4 max-md:text-5xl max-md:leading-12">
-                Still Trapped in That 9 to 5? Here's How I Got Out.
+              But Sales Aren’t Following? I Know Why
               </h1>
               <p className="max-w-440 mb-14 body-1 max-md:mb-10">
-                The daily grind doesn't have to last forever. Let me show you how I turned my side hustle into a full-time digital business and never looked back.
+              Building a digital product business from scratch is hard, but you don’t have to figure it out alone. From setting up everything to generating sales— Get real-world advice and support from those who’ve done it before.
               </p>
               <LinkScroll to="features" offset={-100} spy smooth>
                 <Button icon="/images/zap.svg">Get started now</Button>
