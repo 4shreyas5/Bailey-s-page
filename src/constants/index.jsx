@@ -1,3 +1,5 @@
+import thumbnail from "./Thumbnail.png";
+export default thumbnail;
 export const features = [
   {
     id: "0",
@@ -136,10 +138,10 @@ export const faq = [
 export const plans = [
   {
     id: "0",
-    title: "Benefits",
+    title: "What You'll Get",
     // priceMonthly: 19,
     // priceYearly: 12,
-    caption: "Your Business, Our Support: Here’s how the Skool Community can help you— ",
+    caption: "Your Business, Our Support : Here’s how the Skool Community can help you ",
     features: [
       "Proven Step-by-Step System: I’ll walk you through how to launch a successful digital product business on Etsy, even if you’re starting from scratch. No guesswork, just a clear plan that works.",
       "AI-Driven Insights: Get daily prompts for trending, low-competition products and create stunning designs using tools like Dalle-3, Kittl, and Midjourney. Plus, get SEO tips for tags and titles to boost your sales.",

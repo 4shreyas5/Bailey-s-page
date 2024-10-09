@@ -147,7 +147,10 @@ const Pricing = () => {
                 </ul>
                 <p className="relative text-xl z-2 flex items-center justify-center mt-16" >Tired of waiting for the "right moment" to achieve your dream sales? Let's make that moment right now.</p>
                 <div className="mt-10 flex w-full justify-center">
-                  <Button icon={plan.icon}>Get Started</Button>
+                <a href="https://www.skool.com/baileys-dfy-design-seo-club-4959/about" target="_blank" rel="noopener noreferrer">
+                <Button icon={plan.icon}>Get Started</Button>
+</a>
+
                 </div>
               </div>
             ))}

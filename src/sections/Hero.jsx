@@ -4,6 +4,7 @@ import Button from "../components/Button.jsx";
 import { db } from "../../firebaseconfig.js"; // Import the Firestore instance
 import { collection, doc, setDoc } from "firebase/firestore"; // Import Firestore functions
 import { v4 as uuidv4 } from 'uuid'; // Import UUID for unique ID generation
+import thumbnail from "../constants/index.jsx"; // Import your thumbnail image
 
 const Modal = ({ onClose, onSubmit }) => {
   const [name, setName] = useState("");
@@ -20,7 +21,7 @@ const Modal = ({ onClose, onSubmit }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white text-black p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-xl font-semibold mb-4">Enter your details</h2>
+        <h2 className="text-xl font-semibold mb-4">Enter Your Details To Watch The Video!</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block mb-2">Name</label>
@@ -106,41 +107,49 @@ const Hero = () => {
             {/* Text Section */}
             <div className="max-w-512 max-lg:max-w-388">
               <div className="caption small-2 uppercase text-p3">
-              You Started Your Creative Digital Design Business,
+                You Started Your Creative Digital Design Business,
               </div>
               <h1 className="mb-6 h4 text-p4 uppercase max-lg:mb-7 max-lg:h2 max-md:mb-4 max-md:text-5xl max-md:leading-12">
-              But Sales Aren’t Following? I Know Why
+                But Sales Aren’t Following? I Know Why
               </h1>
               <p className="max-w-440 mb-14 body-1 max-md:mb-10">
-              Building a creative digital product business from scratch is hard, but you don’t have to figure it out alone. From figuring out what products to sell, to the AI prompts to create them, up everything to generating sales— Get real-world advice and support from those who’ve done it before.
+                Building a creative digital product business from scratch is hard, but you don’t have to figure it out alone. From figuring out what products to sell, to the AI prompts to create them, up everything to generating sales— Get real-world advice and support from those who’ve done it before.
               </p>
-              <LinkScroll to="features" offset={-100} spy smooth>
-                <Button icon="/images/zap.svg">Get started now</Button>
-              </LinkScroll>
+              <a href="https://www.skool.com/baileys-dfy-design-seo-club-4959/about" target="_blank" rel="noopener noreferrer">
+  <Button icon="/images/zap.svg">Get started now</Button>
+</a>
+
             </div>
 
             {/* Video Section */}
             <div className="ml-20 mt-14 max-lg:ml-0 max-lg:mt-10">
               {!videoAllowed ? (
-                <div className="w-[500px] h-[280px] bg-black flex items-center justify-center text-white">
-                  <button
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
-                    onClick={() => {
-                      setShowModal(true);
-                      console.log("Modal opened");
-                    }}
-                  >
-                    Watch Video
-                  </button>
+                <div className="relative w-[500px] h-[280px]">
+                  <img 
+                    src={thumbnail} 
+                    alt="Video Thumbnail"
+                    className="absolute inset-0 w-full h-full object-cover" 
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <button
+                      className="bg-blue-500 text-white px-4 py-2 rounded"
+                      onClick={() => {
+                        setShowModal(true);
+                        console.log("Modal opened");
+                      }}
+                    >
+                      Watch Video
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <iframe
-                  className="w-[500px] h-[280px] max-lg:w-full max-lg:h-auto"
+                  className="w-[550px] h-[330px] max-lg:w-full max-lg:h-auto"
                   src="https://fast.wistia.net/embed/iframe/0e42xh79en"
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
-                  title="YouTube video"
+                  title="Video"
                 ></iframe>
               )}
             </div>
