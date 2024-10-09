@@ -106,13 +106,13 @@ const Hero = () => {
             {/* Text Section */}
             <div className="max-w-512 max-lg:max-w-388">
               <div className="caption small-2 uppercase text-p3">
-              Started Your Digital business, 
+              You Started Your Creative Digital Design Business,
               </div>
               <h1 className="mb-6 h4 text-p4 uppercase max-lg:mb-7 max-lg:h2 max-md:mb-4 max-md:text-5xl max-md:leading-12">
               But Sales Aren’t Following? I Know Why
               </h1>
               <p className="max-w-440 mb-14 body-1 max-md:mb-10">
-              Building a digital product business from scratch is hard, but you don’t have to figure it out alone. From setting up everything to generating sales— Get real-world advice and support from those who’ve done it before.
+              Building a creative digital product business from scratch is hard, but you don’t have to figure it out alone. From figuring out what products to sell, to the AI prompts to create them, up everything to generating sales— Get real-world advice and support from those who’ve done it before.
               </p>
               <LinkScroll to="features" offset={-100} spy smooth>
                 <Button icon="/images/zap.svg">Get started now</Button>
@@ -136,7 +136,7 @@ const Hero = () => {
               ) : (
                 <iframe
                   className="w-[500px] h-[280px] max-lg:w-full max-lg:h-auto"
-                  src="https://www.youtube.com/embed/WxtJqyIyThU"
+                  src="https://fast.wistia.net/embed/iframe/0e42xh79en"
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
