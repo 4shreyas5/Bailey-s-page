@@ -144,7 +144,7 @@ const Hero = () => {
                 </div>
               ) : (
                 <iframe
-                className="w-[550px] h-[330px] max-lg:w-[450px] max-lg:h-[280px] max-md:w-[360px] max-md:h-[240px] max-sm:w-[320px] max-sm:h-[220px]"
+                className="w-[550px] h-[330px] max-lg:w-[450px] max-lg:h-[280px] max-md:w-[380px] max-md:h-[260px] max-sm:w-[340px] max-sm:h-[240px]"
                 src="https://fast.wistia.net/embed/iframe/0e42xh79en"
                 frameBorder="0"
                 allow="autoplay; encrypted-media"
